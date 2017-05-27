@@ -5,29 +5,15 @@ $(document).ready(function() {
   $('#one').click(function(event) {
     event.preventDefault();
     var newAlarm = new Alarm();
-    var ring = $('#ring').val();
-    var simpleAlarm = new Alarm("");
-    var output = simpleAlarm.time(ring);
-    output.forEach(function() {
-      $('#output').append("<ol>" + currentTime + "</ol>");
-    });
+        var output = newAlarm.time(ring);
   });
 });
 
-function Alarm(firstTime) {
-  this.first = firstTime;
-}
-
-Alarm.prototype.time = function(ring) {
-  var output = [];
-  var currentTime= $("#ring").val("");
-  var index = $("#time").val("");
-      if (index === currentTime) {
-      output.push("index");
-    } else  {
-      output.push(currentTime);
-    }
-  return output;
+var update = function () {
+  $('#time').text(moment().format('hh:mm:ss'));
 };
 
-exports.alarmModule = Alarm;
+$(document).ready(function(){
+  update();
+  setInterval(update, 1000);
+});

@@ -3,15 +3,15 @@ function Alarm(firstTime) {
 }
 
 Alarm.prototype.time = function(ring) {
-  var output = [];
-  var currentTime= $("#ring").val("");
-  var index = $("#time").val("");
+  var currentTime= $("#time").val();
+  $('#time').val("");
+  var index = $("#ring").val();
+  $('#ring').val("");
       if (index === currentTime) {
-      output.push("index");
+      $('#output').append("<li>" + index + "</li>");
     } else  {
-      output.push(currentTime);
+      $('#output').append("<li>" + 'waky waky' + "</li>");
     }
-  return output;
 };
 
 exports.alarmModule = Alarm;

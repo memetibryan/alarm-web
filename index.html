@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
+  <meta name="viewpoint" content="width=device-width">
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link href="css/alarm.css" rel="stylesheet"></script>
   <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="build/js/app.js"></script>
   <script type="text/javascript" src="build/js/app.js"></script>
   <title>ALARM</title>
 </head>
 
-<header>
-  <h1>ALARM PAGE</h1>
-</header>
-
 <body>
-  <h2>Current Time:</h2>
-  <h2 id="time"></h2>
+  <div class="jumbotron">
+    <h1>ALARM PAGE</h1>
+  <h2>Current Time:   <span id="time"></span>
+  </div>
 
   <div class="container">
     <form id="alarmTime">
-      <input id ="ring" type="time" placeholder="Enter alarm time">
-      <button class="btn-success" type="submit" id="one">Add time</button>
-    </form>
+      <input id="ring" type="time" placeholder="Enter Alarm Time"></input>
+      <button class="btn-default" id="one">Add time</button>
 
-    <ul id="output">
-    </ul>
+    <ul id="output"></ul>
+  </form>
 
   </div>
 </body>
